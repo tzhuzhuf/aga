@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Speed Trainer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Typing Speed Trainer</h1>
+
+    <!-- Кнопка для перехода к авторизации или регистрации -->
+    <button id="login-register-button" style="display: none;" onclick="showAuthSection()">Login / Register</button>
+
+    <!-- Раздел авторизации (опционально) -->
+    <div id="auth-section">
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Username" required><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <button type="submit">Login</button>
+      </form>
+      <p id="login-error" style="color: red;"></p>
+      <p>Don't have an account? <a href="javascript:void(0);" id="show-register">Register here</a></p>
+    </div>
+
+    <!-- Раздел регистрации -->
+    <div id="register-section" style="display: none;">
+      <h2>Register</h2>
+      <form id="register-form">
+        <input type="text" id="new-username" placeholder="Username" required><br>
+        <input type="password" id="new-password" placeholder="Password" required><br>
+        <button type="submit">Register</button>
+      </form>
+      <p id="register-error" style="color: red;"></p>
+      <p>Already have an account? <a href="javascript:void(0);" id="show-login">Login here</a></p>
+    </div>
+
+    <!-- Основная игра -->
+    <div id="game-section" style="display: none;">
+      <h2>Typing Test</h2>
+      <div id="text-to-type"></div>
+      <input type="text" id="user-input" placeholder="Start typing..." autofocus>
+      <div id="timer">Time: 0</div>
+      <div id="wpm">WPM: 0</div>
+      <div id="accuracy">Accuracy: 0%</div>
+      <button id="end-test" style="display: none;">End Test</button>
+    </div>
+    
+
+    <button id="view-results-button" style="display: none;">Мои результаты</button>
+    <div id="results-section" style="display: none;"></div>
+
+    <button id="logout-button" style="display: none;">Logout</button>
+    <button id="start-guest-button" style="display: inline-block;">Start as Guest</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
